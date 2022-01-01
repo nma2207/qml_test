@@ -26,7 +26,7 @@ ApplicationWindow {
     Rectangle
     {
         id: _layout
-        Button {
+        RoundButton {
             id: _decButton
             text: "-"
             onClicked:b_view.dec()
@@ -39,8 +39,9 @@ ApplicationWindow {
             background: Rectangle {
                 color: parent.color
                 opacity: 0
+
             }
-            anchors.rightMargin: -5
+            radius: 5
         }
         Label {
             id: _label
@@ -52,7 +53,7 @@ ApplicationWindow {
             height: 40
             anchors.centerIn: parent
         }
-        Button {
+        RoundButton {
             text: "+"
             onClicked: _view.inc()
             font.pixelSize: _label.font.pixelSize * 2
@@ -61,11 +62,11 @@ ApplicationWindow {
             background: Rectangle {
                 color: parent.color
                 opacity: 0
-                //radius: 5
+
             }
-            anchors.leftMargin: -5
             width: 40
             height: 40
+            radius: 5
         }
 
         color: "#CDD3F3"
@@ -96,11 +97,13 @@ ApplicationWindow {
         number: sb.value
     }
 
-    Button {
+    RoundButton {
         text: qsTr("Set random number")
         anchors.top : parent.top
         anchors.horizontalCenter: _layout.horizontalCenter
         onClicked:_view.setRandomNumber()
+        height: 50
+        radius: 5
 
     }
 }
